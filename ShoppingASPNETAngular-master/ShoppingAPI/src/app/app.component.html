@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="jumbotron">
+    <h1>Shopping App</h1>
+    <h2>Welcome to our shopping App</h2>
+  </div>
+
+  <div class="row">
+    <div class="col" *ngFor="let product of results">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src={{product.photo}} alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.category}}</p>
+          <h5 class="card-title">${{product.price}}</h5>
+          <a href="#" class="btn btn-primary" (click)="addtoCart(product)" >Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class = "col">
+      <h2>Cart:</h2>
+      <div *ngFor="let item of cart">
+        <h5 class="card-title">{{item.name}} - ${{item.price}}</h5>
+      </div>
+    </div>
+  </div>
+
+</div>
